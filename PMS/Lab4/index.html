@@ -1,0 +1,114 @@
+﻿<!DOCTYPE HTML>
+<html><head>
+  <meta charset="utf-8">
+  <title>Дюг Сергій</title>
+</head><body>
+<center>
+<canvas></canvas>
+</center>
+<script type="text/javascript" charset="utf-8">
+  var can = document.getElementsByTagName('canvas')[0];
+  var ctx = can.getContext('2d');
+  can.width=document.documentElement.clientWidth-50;//відступ для scrollbar
+  can.height=document.documentElement.clientHeight-50;
+  var timer;
+    
+    var grd = ctx.createLinearGradient(0, 0, 0, 400); //заливка "неба"
+    grd.addColorStop(0, "black");
+    grd.addColorStop(1, "blue");
+
+    var drawmoon=false;	//малювати кита?
+    
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0,can.width, 400);
+    //загрузка картинок
+    var img2 = new Image();
+    img2.src = "images/blue.png";
+    var img4 = new Image();
+    img4.src = "images/sun.png";
+    var img5 = new Image();
+    img5.src = "images/moon.png";
+    var img3 = new Image();
+    img3.src = "images/smallwave.png";
+    var img = new Image();
+    img.src = "images/road.png";
+    
+    var moonpos=450,moonofset=0; //стартові координати для місяця
+    var counter=0,carOfset=-img.width,carJump=0; 
+    var jumpstep=1;
+    var timerCounter=0;
+    
+    var direction=0, dirmod=1,step=5;
+    var ofset=0,waveoffset=0,waveoffset2=0;
+    
+	//ставимо таймер на найбільшу картинку - то що  її загрузка займе набільше часу
+	//а значить таймер буде викликаний тоді, коли всі картинки точно загрузить
+    img4.onload=function(){timerCounter=0;timer=setTimeout(draw,30);};
+    
+    
+    
+    function draw()
+    {
+		//заливаєм градієнтом небо
+        ctx.fillStyle = grd;
+		//очищуєм від попередніх рисунів кита, і т.д.
+        ctx.fillRect(0, 0,can.width, 400);
+        		
+		//місяць "вискакує" кожні 70 тиків таймера
+        if (timerCounter==70)
+            {
+                drawmoon=true;
+            }
+        else if (drawmoon==false) {timerCounter+=1;}
+		
+		drawMoon()
+		
+        ctx.fillStyle="rgb(0,166,81)";
+        ctx.fillRect(0,300,can.width, can.height);
+        //дорога
+		ctx.drawImage(img, 0,    320,can.width,250);
+		
+         //тут рахується, чи машина "підскакує" на дорозі, чи падає
+        if (carJump<0 || carJump>45) {jumpstep*=-1;}
+        carJump+=0.5*jumpstep;
+        
+        
+        if (carOfset>can.width)
+            carOfset=-img2.width-500;
+        else
+            {
+                carOfset+=5;
+        ctx.drawImage(img2, 100+carOfset,380-carJump,200,120);
+            }
+		//чомусь setInterval працює не зовсім правильно, тому я юзаю рекурсивний виклик setTimeout
+        timer=setTimeout(draw,30);
+    }
+    function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+    }
+    
+	function drawMoon(){
+	        if (drawmoon==true)
+            {
+			ctx.beginPath();
+			ctx.arc(moonofset+5, 375-counter, 75, 0, 2 * Math.PI, false);
+			ctx.fillStyle = "rgba("+2*counter+",50,"+2*counter+",0.3)";
+			ctx.fill();
+			ctx.globalAlpha = 0.5;
+            ctx.drawImage(img5,-70+moonofset,300-counter,150, 150);
+			ctx.globalAlpha = 1;
+            
+            counter+=0.3*step;
+            moonofset+=3.5;
+            timerCounter=0;
+            }
+        if (counter>=270) step*=-1;
+        if (counter==0) {drawmoon=false;step*=-1; moonofset=0;}
+	}
+	
+    function getRandomOffset() {
+    if (Math.floor(Math.random() * (10 -0 ))+ 0>5) return 1;
+        else return 0;
+    }
+</script>
+</body></html>
