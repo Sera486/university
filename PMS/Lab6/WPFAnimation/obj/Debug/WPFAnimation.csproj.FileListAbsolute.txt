@@ -1,0 +1,14 @@
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\obj\Debug\WPFAnimation.csprojResolveAssemblyReference.cache
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\obj\Debug\MainWindow.g.cs
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\obj\Debug\App.g.cs
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\obj\Debug\WPFAnimation_MarkupCompile.cache
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\obj\Debug\WPFAnimation_MarkupCompile.lref
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\bin\Debug\WPFAnimation.exe.config
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\bin\Debug\WPFAnimation.exe
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\bin\Debug\WPFAnimation.pdb
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\obj\Debug\MainWindow.baml
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\obj\Debug\WPFAnimation.g.resources
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\obj\Debug\WPFAnimation.Properties.Resources.resources
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\obj\Debug\WPFAnimation.csproj.GenerateResource.Cache
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\obj\Debug\WPFAnimation.exe
+D:\Yandex.Disk\Универ\3К2С\Мультимедійні системи\Lab6\WPFAnimation\obj\Debug\WPFAnimation.pdb
